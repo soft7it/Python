@@ -1,27 +1,26 @@
 i = -10
 print(type(i)) 
+#<class 'int'>
 
 f = 0.001
 print(type(f)) 
+#<class 'float'>
 
 s = 'abc'
 print(type(s)) 
+#<class 'str'>
 
 l = [1,2,3]
 print(type(l)) 
+#<class 'list'>
 
 d = { 'a': 1, 'b': 2, 'c': 3 }
 print(type(d)) 
+#<class 'dict'>
 
 b = False
 print(type(b)) 
-
-
-
-
-
-
-
+#<class 'bool'>
 -------------------
 i = -10
 f = 0.001
