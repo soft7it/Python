@@ -1,0 +1,30 @@
+i = -10
+print(type(i)) 
+
+f = 0.001
+print(type(f)) 
+
+s = 'abc'
+print(type(s)) 
+
+l = [1,2,3]
+print(type(l)) 
+
+d = { 'a': 1, 'b': 2, 'c': 3 }
+print(type(d)) 
+
+b = False
+print(type(b)) 
+
+
+
+
+
+
+
+-------------------
+i = -10
+f = 0.001
+x = f > i
+print(x)
+print(type(x))
