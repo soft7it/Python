@@ -1,0 +1,9 @@
+walk_E_metr = 5
+walk_S_metr = 4
+walk_W_metr = 3
+walk_N_metr = 2
+
+total_steps = walk_E_metr + walk_S_metr + walk_W_metr + walk_N_metr
+
+print("Robotul a facut in total", total_steps, "pasi.")
+print("Robotul s-a deplasat sprea dreapta", walk_E_metr, "pasi si in jos robotul fata de pozitia sa initiala cu", walk_S_metr, "pasi")
