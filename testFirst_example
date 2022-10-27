@@ -1,0 +1,10 @@
+students_firstname = "John"
+students_lastname  = "Doe"
+students_age = 21
+students_where_born  = "Miami"
+students_addrress = "St. Trope, 78214, 77 Richmond Avenue"
+print(students_firstname)
+print(students_lastname)
+print(students_age)
+print(students_where_born)
+print(students_addrress)
