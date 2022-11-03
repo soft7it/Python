@@ -1,3 +1,6 @@
+from time import sleep
+from os import system
+
 # HW : could use system sleep#
 
 #Input
@@ -39,6 +42,13 @@ consum_energy_total_bill = consum_energy_bill_month1 + consum_energy_bill_month2
 koeficient_month1 = int(100 * consum_energy_month_1kWh / consum_energy_total_kWh)
 koeficient_month2 = int(100 * consum_energy_month_2kWh / consum_energy_total_kWh)
 koeficient_month3 = int(100 * consum_energy_month_3kWh / consum_energy_total_kWh)
+
+
+ # apear transition time
+system("cls")  # sau clear depinde de sistem de operare
+
+# sleep functie sa apara mai tirziu
+sleep(3)
 
 #Output
 print("Consumption:")
