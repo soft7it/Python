@@ -17,18 +17,23 @@ rate_ROU_to_EUR = 4.85
 if input_currency == "USD":
     moneyEUR = input_amount / rate_EUR_to_USD
     print("You have got: ", moneyEUR, "EUR")
-elif input_amount == "EUR":
+    
+elif input_currency == "EUR":
     moneyUSD = input_amount / rate_USD_to_EUR
-    print("You have got: ", moneyUSD, "USD")
-elif input_amount == "MDL":
-    moneyEUR_MDL = input_amount / rate_EUR_to_MDL
-    print("You have got: ", moneyEUR_MDL, "EUR")
-elif input_amount == "EUR":
+    print("You have got: ", moneyUSD, "USD")  # float(moneyUSD, 2)
+
+elif input_currency == "MDL":
+    moneyEUR_MDL = input_amount * rate_EUR_to_MDL
+    print("You have got: ", moneyEUR_MDL, "MDL")
+
+elif input_currency == "MDL-EUR":
     moneyUSD = input_amount / rate_USD_to_EUR
     print("You have got: ", moneyUSD, "EUR")
-elif input_amount == "ROU":
+
+elif input_currency == "ROU":
     moneyEUR_ROU = input_amount / rate_EUR_to_ROU
     print("You have got: ", moneyEUR_ROU, "ROU")
-else: 
+
+elif input_currency == "ROU-EUR":
     moneyROU_EUR = input_amount / rate_ROU_to_EUR
     print("You have got: ", moneyROU_EUR, "EUR")
