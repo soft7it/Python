@@ -31,9 +31,11 @@ elif input_currency == "MDL-EUR":
     print("You have got: ", moneyUSD, "EUR")
 
 elif input_currency == "ROU":
-    moneyEUR_ROU = input_amount / rate_EUR_to_ROU
+    moneyEUR_ROU = input_amount * rate_ROU_to_EUR
     print("You have got: ", moneyEUR_ROU, "ROU")
 
 elif input_currency == "ROU-EUR":
-    moneyROU_EUR = input_amount / rate_ROU_to_EUR
+    moneyROU_EUR = input_amount * rate_EUR_to_ROU
     print("You have got: ", moneyROU_EUR, "EUR")
+# else:
+#     print("YOU COULD ONLY OUR VALUTE CONVERTET. ")    
