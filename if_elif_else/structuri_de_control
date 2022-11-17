@@ -1,0 +1,17 @@
+"""
+Se cere sa se:
+
+Se adauge o conditie in plus astfel incat acest cod sa 
+afiseze "Positive and odd" de fiece data value reprezinta
+ o valoare pozitiva impara si respectiv "The rest" pentru restul valorilor
+"""
+
+###########
+value = 10
+print("Positive") if value >= 0 else print("Negative")
+
+#################
+
+value = int(input("adauga valoarea numar: "))
+# value = 10
+print("The rest") if value % 2 == 0 else print("Positive and odd")
