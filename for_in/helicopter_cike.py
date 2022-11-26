@@ -25,9 +25,9 @@ for y in range(SCALE):
     system("cls")
 
     if y <= 8:
-        map += str(y + 1) + ". " # numerotam rindurile 0-9 !!! numerotatia 1 la 10
+        map += " " + str( + y + 1) + ". " # numerotam rindurile 0-9 !!! numerotatia 1 la 10
     else:
-        map += str(y + 1) + "." 
+        map += str(y + 1) + ". " 
     for x in range(SCALE):
 
         if x == 0 or x == SCALE -1 or y == 0 or y == SCALE - 1:
@@ -66,4 +66,3 @@ for y in range(SCALE):
     map += "\n"
 
 print(map)
-
