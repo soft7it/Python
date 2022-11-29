@@ -24,10 +24,8 @@ map = ""
 for y in range(SCALE):
     system("cls")
 
-    if y <= 8:
-        map += " " + str( + y + 1) + ". " # numerotam rindurile 0-9 !!! numerotatia 1 la 10
-    else:
-        map += str(y + 1) + ". " 
+    map += str(f" {+ y + 1 :2}") + ". " # numerotam rindurile 0-9 !!! numerotatia 1 la 10
+    
     for x in range(SCALE):
 
         if x == 0 or x == SCALE -1 or y == 0 or y == SCALE - 1:
