@@ -53,28 +53,21 @@ students_last_name = []
 students_age = []
 
 while len(students_d) < 2:    
-    students_n = input("Enter student's data:")
-    
-    if students_n == "":
+    students_n = input("Enter student's data:").split(" ")
+        
+    if students_d == "":
         break
-    students_d.append(students_n.split(" "))
-    
-   # students_first_name = students_d[1]
-    # if students_d[0]:
-    students_first_name.append(students_d[0][0]) 
-    students_last_name.append(students_d[0][1])
-    students_age.append(students_d[0][2]) 
-# print( students_first_name[1])
-    #     
-
-    #    
-
-    
-    # print(" aici ", students_d)
-
-
-    # students_d[0] = students_first_name    
+    students_d.append(students_n)
+    students_first_name.append(students_n[0])
+    students_last_name.append(students_n[1])
+    students_age.append(students_n[2])    
+ ####  explicatia cum se extrage si se divizeaza pe variavile separat  
+print(students_first_name)
+print(students_last_name)
+print(students_age)
+print( students_d) 
+# explicatia cum se extrage si se divizeaza pe variavile separat
 
 for i in range( len(students_first_name) ):
-    print(students_first_name[i])
+    print(i + 1, "-",students_first_name[i],students_last_name[i],students_age[i])
    
