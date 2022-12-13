@@ -42,7 +42,7 @@ print()
 
 for ri in range(SIZE[0]): # coordonatele iese de la 0 la 7 
     rc = SIZE[1] - ri     # intoarcem coordonatele de la 8 la 1
-    print(" " + "-----"*SIZE[1])
+    print(" " + "-----"*SIZE[1]) # face rindurile de sus a celulei
     print(rc, end="")
 
     for ci in range(SIZE[1]): # afiseaza rindurile pe verticala
@@ -64,9 +64,7 @@ for ri in range(SIZE[0]): # coordonatele iese de la 0 la 7
     print(f"|{rc}") # afisham ultima bara a coloanei 8
     
 
-print("-----"*SIZE[1])   # afisham partea de jos din fiecare celula din coloana 
+print(" " + "-----"*SIZE[1])   # afisham partea de jos din fiecare celula din coloana 
 
 for alf in alfabet:
     print("   " + alf[0] + " ", end="")
-
-
