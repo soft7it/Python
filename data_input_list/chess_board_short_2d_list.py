@@ -87,6 +87,7 @@ while not game_over:
         
         ri_to     = SIZE[0] - int(to_[1])
         ci_to     = alfabet.index(to_[0])
+        # print("!")
 
         if board[ri_from][ci_from] == piece_code:
             if piece_code == WPAWN:
@@ -94,7 +95,7 @@ while not game_over:
                     if ri_to - ri_from == 1 or\
                         ri_to - ri_from == 2 and ri_from == 1:
                         #print("!")  # controlom debuging
-                        if board[ri_from][ci_from] == EMPTY: # daca matricia este goala atunci paseste pe urmatoarea
+                        if board[ri_to][ci_to] == EMPTY: # daca matricia este goala atunci paseste pe urmatoarea
                             board[ri_from][ci_from] = EMPTY # il scoatem si ilocuim cu zero -gol
                             board[ri_to][ci_to] = piece_code
                 # elif bataia fifurei            
@@ -109,3 +110,4 @@ while not game_over:
     #   1. check left / right diagonals      17:00 min video!!!
     #   2. check it the is a piece
     #   3. increase the score by corresponding value
+    # https://www.chess.com/terms/chess-piece-value
