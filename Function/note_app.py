@@ -7,7 +7,7 @@ from datetime import datetime
 notes = [
     {
         "text": "table 1, 2 soups",
-        "when": "21:07",
+        "when": "03:57",
     },
     {
         "text": "bill to table 2",
@@ -25,15 +25,15 @@ def clear():
 
 def showNotes(pnotes):
     now = datetime.now() # get exact time now
-    h, m = now.hour, noe.minute
+    h, m = now.hour, now.minute
     for note in pnotes:  #
         warning = "" # asteapta! alarma 
         if note["when"] != None:
             fragments = note["when"].split(":")
-            nh, nm = int(fragments[0], int(fragments[1]))
+            nh, nm = int(fragments[0]), int(fragments[1])
             if h == nh and nm - m < 5 :
                 warning = "( 5 or less min left !!!)"
-    print(f"{note['text']} {warning}")
+        print(f"{note['text']} {warning}")
 
 
 def addNote(pnotes) :
@@ -51,6 +51,6 @@ def deleteNote(pnotes) :
 ################################################
 # 
 clear()
-addNote(notes)
-deleteNote(notes)   
-showNotes(notes)          
+# addNote(notes)
+# deleteNote(notes)   
+showNotes(notes)     
