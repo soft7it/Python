@@ -37,20 +37,35 @@ def showNotes(pnotes):
 
 
 def addNote(pnotes) :
-    text = input("enter text: ") 
+    text = input("enter text: ")
+    position = int(input("whichi position do you want ?")) - 1
+    # intrebare ? daca pune text - cum eliminam eroarea la position ?  rindu 49 ?????????????????? 
+
+    if position <= len(notes) and position >= 0:
+        pnotes.insert(position, {"text": text, "when": None})
+        # intebare ? sa nu scrim "when" - al 2-lea posibil ?????????????????????????????????
+    elif position <= 1:
+        print(f"you position {position + 1} is not right")
+    elif isinstance( position, str):
+    # type(position) == str:?????????????????????????????????????????????
+    # position == str(position):
+        print(f"you position is wrong, you need insert only number")
+    else:
+        print(f"you position {position} is not right")
+
 
 # .insert() metod
 #  HW : ask the user if he wants it on a specific position 
 
-    pnotes.append( { "text": text } )
+    # pnotes.append( { "text": text } )
 
 def deleteNote(pnotes) :
-    idx = int(input("which one : ")) - 1 # dearece numaratoarea se incepe de la 0 zero
+    idx = int(input("which one delete : ")) - 1 # dearece numaratoarea se incepe de la 0 zero
     pnotes.pop(idx)
 
 ################################################
 # 
 clear()
-# addNote(notes)
+addNote(notes)
 # deleteNote(notes)   
-showNotes(notes)     
+showNotes(notes) 
