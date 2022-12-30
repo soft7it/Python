@@ -22,13 +22,13 @@ from os import system
 system("cls")
 
 def drawLine( length, direction ):
-    direction = "-"
-    print(length * direction)
+    if direction == "h":
+        direction = "-"
+        print(length * direction)
+    elif direction == "v":
+        direction = "|\n" 
+        print(length * direction)
 
 drawLine( 5, "h")
-
-def drawLine(length, direction):
-    direction = "|\n" 
-    print(length * direction)
-
-drawLine( 3, "v")    
+drawLine( 3, "v") 
+#def drawLine(length, direction): 
