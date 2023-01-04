@@ -19,7 +19,7 @@ while True:
             
             rc += 1             # increment coord
             gameMap[rr][rc] = 2
-    if 0 > rc :
+    if 0 < rc :
         
         if key == "a" and gameMap[rr][rc-1] != 1:  # directia spre stinga
             
@@ -35,7 +35,7 @@ while True:
             
             rr += 1
             gameMap[rr][rc] = 2
-    if 0 > rr:        
+    if 0 < rr:        
         if key == "w" and gameMap[rr-1][rc] != 1: # directia spre sus
             
             rr -=1
