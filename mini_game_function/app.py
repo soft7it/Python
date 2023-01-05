@@ -10,19 +10,21 @@ while True:
     
 
     if key == 'x':  # tasta iese din jok
-        break
+        break        
     
-        
-    gameMap[rr][rc] = 0 # erase the robot
-    
-    if key == "d" and gameMap[rr][rc+1] != 1: # directia spre dreapta cu conditia daca se misca cu +1 nu intilneste 1
-        if rc < 9:
-            rc += 1             # increment coord
-            gameMap[rr][rc] = 2
+    if rc <= 8:       
+        if key == "d" and gameMap[rr][rc+1] != 3 or key == "d" and gameMap[rr][rc+2] != 3: # :
+            print("WARNING DANGER!!!")
+            input()
+            if key == "d" and gameMap[rr][rc+1] != 1: # directia spre dreapta cu conditia daca se misca cu +1 nu intilneste 1
+                    
+                gameMap[rr][rc] = 0 # erase the robot
+                rc += 1             # increment coord
+                gameMap[rr][rc] = 2
 
-    
-    if key == "a" and gameMap[rr][rc-1] != 1:  # directia spre stinga
-        if 0 < rc :
+    if 0 < rc :
+        if key == "a" and gameMap[rr][rc-1] != 1:  # directia spre stinga
+            gameMap[rr][rc] = 0  # erase the robot
             rc -= 1             # decrement coord
             gameMap[rr][rc] = 2  # punem robotul la lok
 
@@ -31,12 +33,12 @@ while True:
     # : map add same dange mark X, in the moment you move you have radar position rc+1, rc+2 not mine   
     # in casa od danger -> WARNING -> danger detection
     
-    if key == "s" and gameMap[rr+1][rc] != 1: # directia spre jos
-        if rr < 9:
-            rr += 1
-            gameMap[rr][rc] = 2
+    # if key == "s" and gameMap[rr+1][rc] != 1: # directia spre jos
+    #     if rr < 9:
+    #         rr += 1
+    #         gameMap[rr][rc] = 2
         
-    if key == "w" and gameMap[rr-1][rc] != 1: # directia spre sus
-        if 0 < rr:
-            rr -=1
-            gameMap[rr][rc] = 2
+    # if key == "w" and gameMap[rr-1][rc] != 1: # directia spre sus
+    #     if 0 < rr:
+    #         rr -=1
+    #         gameMap[rr][rc] = 2
