@@ -17,3 +17,4 @@ person = {
 file = open("person.json","w")
 file.write( dumps(person) ) # dictionar
 file.close()
+#####
