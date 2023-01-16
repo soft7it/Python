@@ -1,4 +1,6 @@
 import requests
+# search in google how to install pip in python windows -> for fix requests
+# https://pypi.org/  # module de projects !!!!!
 
 date = "16.01.2023"
 
