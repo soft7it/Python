@@ -22,13 +22,16 @@ for l in lines[ 3: -5 ]:    # sublist [startindex : endindex]
     if currency[2] == "EUR":
         euro_rate = float( currency[4].replace(",",".") )    
 
-print("USD: ", used_rate)
-print("EURO: ", euro_rate)
+# print("USD: ", used_rate)
+# print("EURO: ", euro_rate)
 
-
-
-# HW : add interactivity
-#      choose source currency USD/EUR/MDL
-#      input amount < user
-#      choose destination currency USD/EUR/MDL
-#      output amount > user
+###########  HW  ##########################################
+while True:
+    user = input("choose source currency USD/EUR/MDL : ")
+    print(user)
+    if user == "USD":
+        # used_rate
+        print("->USD: ", used_rate)
+    elif user == "EUR":
+        # euro_rate
+        print("->EURO: ", euro_rate)
