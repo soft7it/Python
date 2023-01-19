@@ -14,6 +14,7 @@ lines = data.split("\r\n")  # str.split()  -> list[]
 # print(lines)
 used_rate = 0
 euro_rate = 0
+gbp_rate = 0
 
 for l in lines[ 3: -5 ]:    # sublist [startindex : endindex]
     currency = l.split(";") # unde gaseste ; le sterge!
@@ -21,13 +22,15 @@ for l in lines[ 3: -5 ]:    # sublist [startindex : endindex]
         used_rate = float( currency[4].replace(",",".") )
     if currency[2] == "EUR":
         euro_rate = float( currency[4].replace(",",".") )    
+    if currency[2] == "GBP":
+        gbp_rate = float( currency[4].replace(",",".") )    
 
 # print("USD: ", used_rate)
 # print("EURO: ", euro_rate)
 
 ###########  HW  ##########################################
 while True:
-    user = input("choose source currency USD/EUR/MDL : ")
+    user = input("choose source currency USD/EUR/GBP=MDL : ")
     print(user)
     if user == "USD":
         # used_rate
@@ -35,3 +38,6 @@ while True:
     elif user == "EUR":
         # euro_rate
         print("->EURO: ", euro_rate)
+    elif user == "GBP":
+        # euro_rate
+        print("->GBP: ", gbp_rate)
