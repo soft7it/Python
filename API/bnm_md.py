@@ -32,12 +32,28 @@ for l in lines[ 3: -5 ]:    # sublist [startindex : endindex]
 while True:
     user = input("choose source currency USD/EUR/GBP=MDL : ")
     print(user)
+    how_many = int(input("How many do you have convert"))
     if user == "USD":
         # used_rate
-        print("->USD: ", used_rate)
+        print("for 1 ->USD: ", used_rate, "Lei." )
+        total_amount = how_many * used_rate
+        print(total_amount)
     elif user == "EUR":
         # euro_rate
-        print("->EURO: ", euro_rate)
+        print("for 1 ->EURO: ", euro_rate, "Lei.")
+        total_amount = how_many * euro_rate
+        print(total_amount)
     elif user == "GBP":
         # euro_rate
-        print("->GBP: ", gbp_rate)
+        print("for 1 ->GBP: ", gbp_rate, "Lei.")
+        total_amount = how_many * gbp_rate
+        print(total_amount)
+
+
+
+
+# HW : add interactivity
+#      choose source currency USD/EUR/MDL
+#      input amount < user
+#      choose destination currency USD/EUR/MDL
+#      output amount > user
