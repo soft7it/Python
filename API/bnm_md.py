@@ -1,4 +1,5 @@
 import requests
+from os import system
 
 date = "16.01.2023"
 
@@ -27,12 +28,13 @@ for l in lines[ 3: -5 ]:    # sublist [startindex : endindex]
 
 # print("USD: ", used_rate)
 # print("EURO: ", euro_rate)
+system("cls")
 
 ###########  HW  ##########################################
 while True:
-    user = input("choose source currency USD/EUR/GBP=MDL : ")
+    user = input("Choose source currency USD/EUR/GBP=MDL : ")
     print(user)
-    how_many = int(input("How many do you have convert"))
+    how_many = int(input("How many do you have convert : "))
     if user == "USD":
         # used_rate
         print("for 1 ->USD: ", used_rate, "Lei." )
@@ -48,6 +50,12 @@ while True:
         print("for 1 ->GBP: ", gbp_rate, "Lei.")
         total_amount = how_many * gbp_rate
         print(total_amount)
+    contin = input("Do you want to continue Yes/No? ")
+    if contin == "Yes" :
+        pass
+    else:
+        print("Thank you for your time, see you.")
+        break    
 
 
 
