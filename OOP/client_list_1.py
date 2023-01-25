@@ -14,6 +14,7 @@ class NumberContainer:
         self.val0 = None
         self.val1 = None
         self.val2 = None
+        
 #
 # formarea listei cu 3 celule goale
 # -------------------------
@@ -23,14 +24,18 @@ class NumberContainer:
     # HW: add type check to any SETTING method
     #     if type is not float or int
     #     throw TypeError, video 6:00min
-
+        
     def append(self, value):
-        if self.val0 == None:
-            self.val0 = value
-        elif self.val1 == None:
-            self.val1 = value
-        elif self.val2 == None:
-            self.val2 = value
+        if type(value) is int or type(value) is float:
+            if self.val0 == None:
+                self.val0 = value
+            elif self.val1 == None:
+                self.val1 = value
+            elif self.val2 == None:
+                self.val2 = value
+        else:
+            #raise TypeError
+            pass      
 
     def __getitem__(self, key):  # ajuta sa aratam din obiect nc[0] , valoarea
         if key == 0:
@@ -67,7 +72,6 @@ class NumberContainer:
 #   10 20 30
 #       ^  video 30:00 min
 
-
 """
     get / set
 OBJ --------> ext
@@ -81,7 +85,7 @@ nc.append(30)
 
 for v in nc:
     print(v)
-    sleep(3)
+    sleep(1.5)
 
 """
 1. for ----> ? iter(nc)
