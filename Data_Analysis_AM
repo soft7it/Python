@@ -1,1 +1,64 @@
-This is very sofisticate for analysis Data when appear in source website,
+### This is very sofisticate for analysis Data - monitor when appear in source website,
+
+from playwright.sync_api import sync_playwright
+from bs4 import BeautifulSoup
+import time
+import pygame
+import datetime
+
+# Initialize pygame mixer for sound playback
+pygame.mixer.init()
+
+# Function to play sound alert
+def play_sound_alert():
+    sound_file = "alert.wav.mp3"  # Path to the alert sound file
+    pygame.mixer.music.load(sound_file)
+    pygame.mixer.music.play()
+    # Wait until the sound finishes playing before continuing
+    while pygame.mixer.music.get_busy():
+        time.sleep(1)
+
+# Function to check the website content using Playwright
+def check_website(url):
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)  # Launch a headless browser
+        page = browser.new_page()
+        page.goto(url)
+        
+        # Wait for the content to load (you might need to adjust the wait time)
+        page.wait_for_timeout(5000)
+        
+        # Get the page content after JavaScript has executed
+        content = page.content()
+        soup = BeautifulSoup(content, 'html.parser')
+
+        # Find all matching <div> elements
+        div_elements = soup.find_all('div', {'data-test-component': 'StencilText', 'class': 'hvh-careers-emotion-nfxjpm'})
+        # print(div_elements)
+        # print(soup.prettify())  # This will print the formatted HTML fetched by Playwright APARE TOT HTML
+
+        current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # Get current date and time
+
+        # Check each <div> for the text "Luton, England" or "Bristol"
+        for div in div_elements:
+            text = div.get_text()
+            
+            if "Luton" in text or "Dunstable" in text or 'Milton Keynes' in text or "Hertfordshire" in text or "2 Boscombe Road" in text or "LU5 4GB" in text :
+                # test :  or 'Bristol' in text
+                print(f"Alert ({current_time}): Keyword '{text}' found!")
+                play_sound_alert()
+                print(f"Found '{text}'!")
+                
+        browser.close()
+        return False
+
+# Main loop to keep checking periodically
+def main():
+    url = input("Enter the website URL to monitor: ")
+    while True:
+        check_website(url)
+        time.sleep(15)  # Check every 15 seconds (adjust as needed)
+
+# Start the monitoring process
+if __name__ == "__main__":
+    main()
